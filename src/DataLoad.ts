@@ -18,6 +18,10 @@ export async function loadPlanets(app:AppCore):Promise<boolean> {
         planets = JSON.parse(planetStr)
         console.log('planets as Object', planets)
         app.model.addSection('planets', planets)
+
+        const pdata = app.model.getAtPath('planets.data')
+        console.log('>> data retrieved as ', pdata)
+
     } catch(e) {
         console.error('unable to load planets file ', e)
         return false
