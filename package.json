@@ -16,7 +16,7 @@
     "tscinst:windows": "where.exe tsc || npm install -g typescript",
     "initDesktop": "cd node_modules/@tremho/jove-desktop && npm install && cd buildPack && npm install",
     "initCli": "cd node_modules/@tremho/jove-cli && npm install",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "rm -fr ./build/tests && tsc && tap --reporter spec --no-coverage --no-timeout ${MATCH}"
   },
   "dependencies": {
     "@tremho/jove-common": "^0.6.9-pre-release",
@@ -27,9 +27,12 @@
   },
   "devDependencies": {
     "@tremho/jove-cli": "^0.6.9-pre-release",
+    "@tremho/jove-test": "^0.6.9-pre-release",
+    "@types/tap": "^15.0.5",
     "electron-builder": "^22.11.7",
     "readline-sync": "^1.4.10",
     "run-script-os": "^1.1.6",
+    "tap": "^15.1.5",
     "typescript": "^4.3.5",
     "webpack": "^4.46.0"
   }
