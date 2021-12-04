@@ -15,6 +15,7 @@ export async function dataLoadTest(t: any) {
 
     // loadPlanets has been called from startApp, so we should find the data in our model at the start
     let planets:any = await callRemote('readModelValue planets.data')
+    console.log('read planets as ', typeof planets, planets)
     t.ok(Array.isArray(planets), "Planet data is an array")
 
 }

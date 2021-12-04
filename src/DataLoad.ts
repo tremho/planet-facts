@@ -14,11 +14,13 @@ export async function loadPlanets(app:AppCore):Promise<boolean> {
     let planets;
     try {
         let planetStr = await app.Api.readFileText(planetFile)
-        planets = JSON.parse(app.Api.readFileText(planetStr))
+        console.log('planet JSON text', planetStr)
+        planets = JSON.parse(planetStr)
+        console.log('planets as Object', planets)
+        app.model.addSection('planets', planets)
     } catch(e) {
-        console.error('unable to read planets file ', e)
+        console.error('unable to load planets file ', e)
         return false
     }
-    app.model.addSection('planets', {data: planets})
     return true
 }
