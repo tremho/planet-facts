@@ -1,0 +1,6 @@
+
+#page main
+title='Main Page'
+
+#content
+    <simple-label text="Hello, World!"/>        
