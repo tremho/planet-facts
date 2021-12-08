@@ -11,19 +11,13 @@ import {AppCore} from "@tremho/jove-common"
 export async function loadPlanets(app:AppCore):Promise<boolean> {
 
     const planetFile = app.Path.join(app.Path.assetsPath, 'planets.json')
-    let planets;
+    let planet;
     try {
-        let planetStr = await app.Api.readFileText(planetFile)
-        console.log('planet JSON text', planetStr)
-        planets = JSON.parse(planetStr)
-        console.log('planets as Object', planets)
-        app.model.addSection('planets', planets)
-
-        const pdata = app.model.getAtPath('planets.data')
-        console.log('>> data retrieved as ', pdata)
+        let planet= await app.Api.readFileJson(planetFile)
+        app.model.addSection('planet', planet)
 
     } catch(e) {
-        console.error('unable to load planets file ', e)
+        console.error('unable to load planet file ', e)
         return false
     }
     return true

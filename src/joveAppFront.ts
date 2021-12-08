@@ -5,9 +5,11 @@ import {AppCore} from "@tremho/jove-common";
 
 /* Render-process application start module */
         
-export function appStart(appContext:AppCore) {
+export async function appStart(appContext:AppCore) {
     console.log("planet-facts app has started")
-    
+
+    await appContext.setupMenu('menuDef.txt')
+
     // add your startup code here
     return loadPlanets(appContext)
 }        

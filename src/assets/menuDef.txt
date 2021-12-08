@@ -1,0 +1,43 @@
+
+DEFINE MENU "main"
+
+@Dm#APP!Planet Facts         // App menu - name of app (mac only)
+    @Dm#APP_ABOUT,About Planet Facts            // About info customarily here for mac
+    @Dm#--                                      // special notation for separator
+    @Dm#APP_SERVICES:services,Services          // customary on Mac
+    @Dm#--                                      // special notation for separator
+    @Dm#APP_HIDE:hide,Hide                      // customary on Mac
+    @Dm#APP_HIDEOTHERS:hideothers,Hide Others   // customary on Mac
+    @Dm#APP_UNHIDE:unhide,Show All              // customary on Mac
+    @Dm#--                                      // special notation for separator
+    @Dm#APP_QUIT:quit,Quit                      // Quit is customarily here on Mac
+
+@D#FILE!File
+    @m#FILE_CLOSE:close, Close       // on mac, close the current app window, but don't quit app
+    @uai#APP_QUIT:quit, Quit         // all others, close and quit
+    @w#APP_QUIT:quit, Exit            // windows says "Exit" to quit instead of "Quit"
+
+@D#EDIT:editMenu!Edit
+    @D#EDIT_CUT:cut,Cut
+    @D#EDIT_COPY:copy,Copy
+    @D#EDIT_PASTE:paste,Paste
+
+#INFO!&Info
+    #INFO_DIAMETER, &Diameter [CmdOrCtrl+Shift+D]
+    #INFO_DISTANCE, Di&stance [CmdOrCtrl+Shift+S]
+    #INFO_ORBIT, &Orbit  [CmdOrCtrl+Shift+Y]
+    #INFO_MOONS, &Moons  [CmdOrCtrl+Shift+M]
+
+@D#VIEW:view!View
+    #VIEW_RELOAD:reload,Reload
+    #VIEW_FORCERELOAD:forceReload,Force Reload
+    #VIEW_TOGGLEDEVTOOLS:toggleDevTools,Toggle developer tools
+    #VIEW_TOGGLEFULLSCREEN:togglefullscreen,Toggle full screen
+    #VIEW_RESETZOOM:resetZoom,Actual Size
+    #VIEW_ZOOMIN:zoomIn,Zoom in
+    #VIEW_ZOOMOut:zoomOut,Zoom out
+
+@Dm#WINDOW:windowMenu!Window              // only on Mac
+
+#wuHELP!Help                        // only on Windows and Linux menu bar for now
+    @wu#APP_ABOUT, About Jove test     // put About here for Windows and Linux

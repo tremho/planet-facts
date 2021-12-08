@@ -1,6 +1,14 @@
 
 #page main
-title='Main Page'
+title='Planet Facts'
 
 #content
-    <simple-label text="Hello, World!"/>        
+<simple-label text="@planet.title"/>
+<hr>
+<repeat-for-each subject="@planet.data"
+                 fact="@planet.fact"
+                 unit="@planet.unit">
+    <labeled-value label="$item.name"
+                   value="$item.%fact $%unit"/>
+</repeat-for-each>
+

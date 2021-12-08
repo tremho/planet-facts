@@ -8,5 +8,8 @@
     {"name":"Saturn", "diameter": 120536, "distance": 1433.5, "orbit": 10747, "moons": 82},
     {"name":"Uranus", "diameter": 51118, "distance": 2872.5, "orbit": 30589, "moons": 27},
     {"name":"Neptune", "diameter": 49528, "distance": 4495.1, "orbit": 59800, "moons": 14}
-  ]
+  ],
+  "title": "Planet Diameter",
+  "fact" : "diameter",
+  "unit": "kilometers"
 }
