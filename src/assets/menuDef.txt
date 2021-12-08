@@ -12,12 +12,12 @@ DEFINE MENU "main"
     @Dm#--                                      // special notation for separator
     @Dm#APP_QUIT:quit,Quit                      // Quit is customarily here on Mac
 
-@D#&FILE!&File
+@D#FILE!&File
     @m#FILE_CLOSE:close, &Close       // on mac, close the current app window, but don't quit app
     @uai#APP_QUIT:quit, &Quit         // all others, close and quit
     @w#APP_QUIT:quit, E&xit           // windows says "Exit" to quit instead of "Quit"
 
-@D#&EDIT:editMenu!Edit
+@D#EDIT:editMenu!&Edit
     @D#EDIT_CUT:cut,Cu&t
     @D#EDIT_COPY:copy,&Copy
     @D#EDIT_PASTE:paste,&Paste
