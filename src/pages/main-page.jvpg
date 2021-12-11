@@ -1,10 +1,14 @@
 
 #page main
 title='Planet Facts'
+app-menu
+no-back
 
 #content
 <simple-label text="@planet.title"/>
-<hr>
+
+<hr/>
+
 <repeat-for-each subject="@planet.data"
                  fact="@planet.fact"
                  unit="@planet.unit">

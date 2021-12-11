@@ -39,5 +39,18 @@ DEFINE MENU "main"
 
 @Dm#WINDOW:windowMenu!Window              // only on Mac
 
-#wuHELP!&Help                        // only on Windows and Linux menu bar for now
-    @wu#APP_ABOUT, &About Jove test     // put About here for Windows and Linux
+@wu#HELP!&Help                    // only on Windows and Linux menu bar for now, and on app-menu (all)
+    #APP_ABOUT, &About Jove test // put About here for Windows and Linux
+    #HELP_FOO, Foobar
+    #HELP_BAR, Barfoo
+
+@A#HELP!&Help                    // app-menu help
+    #APP_ABOUT, &About Jove test // put About here for app-menu (mobile)
+
+DEFINE TOOLBAR
+#TB_DIAMETER, dia
+#TB_DISTANCE, dis
+#TB_ORBIT, orb
+#TB_MOONS, mns
+
+
