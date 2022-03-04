@@ -19,6 +19,7 @@
     "test": "rm -fr ./build/tests && tsc && tap --reporter spec --no-coverage --no-timeout ${MATCH}"
   },
   "dependencies": {
+    "@modern-dev/daylight": "^0.1.0",
     "@tremho/jove-common": "^0.6.9-pre-release",
     "@tremho/jove-desktop": "^0.6.9-pre-release",
     "css-element-queries": "^1.2.3",

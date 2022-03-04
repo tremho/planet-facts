@@ -10,6 +10,17 @@ export async function appStart(appContext:AppCore) {
 
     await appContext.setupMenu('menuDef.txt')
 
-    // add your startup code here
-    return loadPlanets(appContext)
+    appContext.model.addSection('moon', {
+        phaseName: 'First Quarter',
+        phaseImage: 'images/phase-2.png',
+        zodiacImage: "url('zodiac/aries.png')",
+        zodiacName: 'aries',
+        illumination: 48.23,
+        rise: '6:23 pm',
+        set : '3:47 am',
+        direction: 'SSE',
+        altitude: 20
+    })
+
+    return  loadPlanets(appContext)
 }        

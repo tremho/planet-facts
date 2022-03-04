@@ -10,12 +10,17 @@ In a Nativescript export, this will become the startup bootstrap and API extensi
 
 import {targetPlatform} from '@tremho/jove-desktop'
 import {registerApp, TBBackApp, FrameworkBackContext} from "@tremho/jove-common"
+import * as lunarCalc from './backExtensions/lunarCalc'
 
 class TBTestApp implements TBBackApp {
 
     appStart(context: FrameworkBackContext) {
+        console.log('>>>> Tracing is in effect')
         console.log('Back App Start called', Date.now())
 
+        console.log('going to register lunarCalc as', lunarCalc)
+        console.log("<<<< you must have seen this")
+        context.registerExtensionModule('lunarCalc', lunarCalc)
         // put your back processes startup code here
         // register any extensions at this point
     }

@@ -28,6 +28,13 @@ DEFINE MENU "main"
     #INFO_ORBIT, &Orbit  [CmdOrCtrl+Shift+Y]
     #INFO_MOONS, &Moons  [CmdOrCtrl+Shift+M]
 
+    >>PLANETS! &Planets
+    #PLANETS_INNER, &Inner planets<checked>[Alt+Shift+I]
+    #PLANETS_OUTER, &Outer planets<checked>[Alt+Shift+O]
+    #PLANETS_ASTEROID, Major &Asteroids<unchecked>[Alt+Shift+M]
+    #PLANETS_PLUTO, &Pluto<unchecked>[Alt+Shift+P]
+    <<
+
 @D#VIEW:view!&View
     #VIEW_RELOAD:reload,&Reload
     #VIEW_FORCERELOAD:forceReload,&Force Reload
@@ -48,9 +55,17 @@ DEFINE MENU "main"
     #APP_ABOUT, &About Jove test // put About here for app-menu (mobile)
 
 DEFINE TOOLBAR
-#TB_DIAMETER, dia
-#TB_DISTANCE, dis
-#TB_ORBIT, orb
-#TB_MOONS, mns
+#TB_DIAMETER, <state=active, icon:default=icons/diameter.png, icon:active=icons/diameter-active.png>
+#TB_DISTANCE, <icon:default=icons/distance.png, icon:active=icons/distance-active.png>
+#TB_ORBIT, <icon:default=icons/orbit.png, icon:active=icons/orbit-active.png>
+#TB_MOONS, <icon:default=icons/moons.png, icon:active=icons/moons-active.png>
+
+DEFINE INDICATORS
+#IN_MOONPHASE, <icon:0=icons/phase-0.png, icon:1=icons/phase-1.png,
+                icon:2=icons/phase-2.png, icon:3=icons/phase-3.png,
+                icon:4=icons/phase-4.png, icon:5=icons/phase-5.png,
+                icon:6=icons/phase-6.png, icon:7=icons/phase-7.png>
+
+
 
 

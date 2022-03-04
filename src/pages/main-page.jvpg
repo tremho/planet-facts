@@ -7,12 +7,13 @@ no-back
 #content
 <simple-label text="@planet.title"/>
 
-<hr/>
 
-<repeat-for-each subject="@planet.data"
-                 fact="@planet.fact"
-                 unit="@planet.unit">
-    <labeled-value label="$item.name"
-                   value="$item.%fact $%unit"/>
-</repeat-for-each>
 
+<scroll-view height="800px" width="300px">
+    <repeat-for-each subject="@planet.data"
+                     fact="@planet.fact"
+                     unit="@planet.unit"
+                     condition="this.planetFilter(item)">
+            <labeled-value label="$item.name" value="$item.%fact $%unit"/>
+    </repeat-for-each>
+</scroll-view>
